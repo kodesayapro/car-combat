@@ -1,0 +1,24 @@
+{
+  "name": "Car Combat",
+  "short_name": "Car Combat",
+  "description": "An action-packed car combat game",
+  "start_url": ".",
+  "display": "fullscreen",
+  "orientation": "landscape-primary",
+  "theme_color": "#f8fcfa",
+  "background_color": "#f8fcfa",
+  "icons": [
+    {
+      "src": "icons/carCombat192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/carCombat512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}
