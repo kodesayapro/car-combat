@@ -231,34 +231,87 @@
         background: #45a049;
       }
 
-      /* Landscape mode */
-      @media (orientation: landscape) {
-        #shootBtn {
-          width: min(80px, 15vmin);
-          height: min(80px, 15vmin);
-        }
-      }
+@media (orientation: portrait) {
+    #game-container {
+        transform: rotate(-90deg);
+        transform-origin: center center;
+        width: 100vh;
+        height: 100vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50vw;
+        margin-left: -50vh;
+    }
 
-      /* Portrait mode */
-      @media (orientation: portrait) {
-        #game-container {
-          transform: rotate(-90deg);
-          width: 100vh;
-          height: 100vw;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin-top: -50vw;
-          margin-left: -50vh;
-        }
+    .game-controls {
+        width: 100%;
+        height: 100%;
+    }
 
-        .controls-right,
-        .controls-left {
-          transform: rotate(90deg);
-          bottom: 20px;
-          right: 20px;
-        }
-      }
+    .controls-left, .controls-right {
+        position: absolute;
+        transform: rotate(90deg);
+    }
+
+    .controls-left {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .controls-right {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Untuk mode landscape */
+@media (orientation: landscape) {
+    #game-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .controls-right {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        transform: none;
+    }
+
+    .controls-left {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        transform: none;
+    }
+
+    /* Tambahkan ini untuk memastikan tombol tembak tidak terlalu besar di mode landscape */
+    #shootBtn {
+        width: min(80px, 15vmin);
+        height: min(80px, 15vmin);
+    }
+}
+
+/* Untuk layar kecil dalam mode landscape */
+@media (orientation: landscape) and (max-height: 450px) {
+    .controls-left, .controls-right {
+        bottom: 10px;
+    }
+
+    .control-btn {
+        width: min(50px, 12vmin);
+        height: min(50px, 12vmin);
+    }
+
+    #shootBtn {
+        width: min(60px, 13vmin);
+        height: min(60px, 13vmin);
+    }
+}
+
+
 
       @supports (-webkit-touch-callout: none) {
         .control-btn {
